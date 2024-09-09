@@ -1,0 +1,44 @@
+:host {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  &.toast {
+    &--success {
+      background-color: green;
+    }
+    &--danger {
+      background-color: red;
+    }
+    &--warn {
+      background-color: yellow;
+    }
+    &--info {
+      background-color: blue;
+    }
+  }
+
+  .toast-message {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+
+  .toast-close {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #fff;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+    margin-left: 5px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

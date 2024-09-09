@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AsideComponent } from './aside.component';
+import { LayoutAsideComponent } from './layout-aside.component';
 
 describe('AsideComponent', () => {
-  let component: AsideComponent;
-  let fixture: ComponentFixture<AsideComponent>;
+  let component: LayoutAsideComponent;
+  let fixture: ComponentFixture<LayoutAsideComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AsideComponent]
+      imports: [LayoutAsideComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AsideComponent);
+    fixture = TestBed.createComponent(LayoutAsideComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
