@@ -1,1 +1,19 @@
-<p>login works!</p>
+<h1>{{ 'pages.login.title' | translate }}</h1>
+
+<form [formGroup]="form" (submit)="test()">
+  <form-field controlName="login">
+    <label for="login">{{ 'pages.login.login' | translate }}</label>
+    <input type="text" id="login" formControlName="login" [placeholder]="'pages.login.login' | translate">
+  </form-field>
+  <form-field controlName="password">
+    <label for="password">{{ 'pages.login.password' | translate }}</label>
+    <input custom type="password" id="password" formControlName="password" [placeholder]="'pages.login.password' | translate">
+  </form-field>
+  <a href="forgot-password">{{ 'pages.login.forgot-password' | translate }}</a>
+  <button type="submit" [disabled]="form.invalid">{{ 'pages.login.enter' | translate }}</button>
+</form>
+
+<p class="register-message">
+  <a href="register">{{'pages.login.register' | translate}}</a>
+  <span class="register-message-question">{{'pages.login.not-registered-yet' | translate}}</span>
+</p>
