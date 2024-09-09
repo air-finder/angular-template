@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.select-dropdown {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 39px;
+  gap: .15rem;
+  width: 100%;
+  background: purple;
+  border-radius: 4px;
+}
