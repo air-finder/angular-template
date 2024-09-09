@@ -1,0 +1,12 @@
+@use 'shadows';
+@use 'theme';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  color-scheme: dark;
+}

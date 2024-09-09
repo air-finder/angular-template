@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@mixin base-font {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+@mixin baseheadline {
+  @include base-font;
+  line-height: 1.2;
+  letter-spacing: 0.18px;
+}
+
+@mixin headline_1 {
+  font-size: 28px;
+  font-weight: 600;
+  @include baseheadline;
+}
+@mixin headline_2 {
+  font-size: 24px;
+  font-weight: 400;
+  @include baseheadline;
+}
+@mixin headline_3 {
+  font-size: 22px;
+  font-weight: 400;
+  @include baseheadline;
+}
+@mixin headline_4 {
+  font-size: 20px;
+  font-weight: 400;
+  @include baseheadline;
+}
+@mixin headline_5 {
+  font-size: 16px;
+  font-weight: 400;
+  @include baseheadline;
+}
+
+@mixin base-subtitle {
+  @include base-font;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@mixin subtitle_1 {
+  font-size: 16px;
+  letter-spacing: 0.15px;
+  @include base-subtitle;
+}
+@mixin subtitle_2 {
+  font-size: 16px;
+  @include base-subtitle;
+}
+@mixin subtitle_3 {
+  font-size: 14px;
+  @include base-subtitle;
+}
+
+@mixin base-body {
+  @include base-font;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: .25px;
+}
+@mixin body_1 {
+  font-size: 14px;
+  @include base-body;
+}
+@mixin body_2 {
+  font-size: 13px;
+  @include base-body;
+}
+@mixin body_3 {
+  font-size: 12px;
+  @include base-body;
+}
+@mixin bold_body_1 {
+  @include body_1;
+  font-weight: 600;
+}
+@mixin bold_body_2 {
+  @include body_2;
+  font-weight: 600;
+}
+@mixin bold_body_3 {
+  @include body_3;
+  font-weight: 600;
+}
+
+@mixin caption {
+  @include base-font;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.4px;
+}
+
+@mixin overline {
+  @include base-font;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+@mixin link {
+  @include base-font;
+  font-size: 13px;
+  line-height: 1.25;
+  letter-spacing: 0.25px;
+}
+
+@mixin button {
+  @include base-font;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
