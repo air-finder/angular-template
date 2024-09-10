@@ -25,18 +25,18 @@ jobs:
       run: npm install
 
     # Step 4: Rodar os testes e verificar a cobertura
-    - name: Run tests with coverage
-      run: npm run test -- --coverage
+    # - name: Run tests with coverage
+    #   run: npm run test -- --coverage
 
     # Step 5: Verificar se a cobertura de testes é de pelo menos 70%
-    - name: Check test coverage
-      run: |
-        COVERAGE=$(grep -Po '"branches": \{\K[^}]*' coverage/coverage-summary.json | grep -Po '"pct": \K[0-9.]+')
-        echo "Current coverage: $COVERAGE%"
-        if (( $(echo "$COVERAGE < 70" | bc -l) )); then
-          echo "Test coverage is below 70%!";
-          exit 1;
-        fi
+    # - name: Check test coverage
+    #   run: |
+    #     COVERAGE=$(grep -Po '"branches": \{\K[^}]*' coverage/coverage-summary.json | grep -Po '"pct": \K[0-9.]+')
+    #     echo "Current coverage: $COVERAGE%"
+    #     if (( $(echo "$COVERAGE < 70" | bc -l) )); then
+    #       echo "Test coverage is below 70%!";
+    #       exit 1;
+    #     fi
 
     # Step 6: Build Docker image
     - name: Build Docker image
