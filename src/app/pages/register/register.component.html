@@ -1,5 +1,5 @@
 <stepper>
-  <step label="Personal information">
+  <step [label]="'pages.register.steps.personal' | translate">
     <form [formGroup]="form.person">
       <form-field controlName="name">
         <label for="name">{{ 'pages.register.name' | translate }}</label>
@@ -23,7 +23,7 @@
       </form-field>
     </form>
   </step>
-  <step label="Create user">
+  <step [label]="'pages.register.steps.account' | translate">
     <form [formGroup]="form.user">
       <form-field controlName="login">
         <label for="login">{{ 'pages.register.login' | translate }}</label>
@@ -39,7 +39,7 @@
       </form-field>
     </form>
   </step>
-  <step label="Terms of service">
+  <step [label]="'pages.register.steps.terms' | translate">
     <form [formGroup]="form.terms">
       <form-field controlName="terms">
         <label for="terms">{{ 'pages.register.terms' | translate }}</label>

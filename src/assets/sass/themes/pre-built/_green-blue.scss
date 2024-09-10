@@ -1,0 +1,10 @@
+@use '../../palettes/blue' as blue-palette;
+@use '../../palettes/green' as green-palette;
+@use '../../theme';
+
+$theme: theme.define-dark-theme((
+  palettes: (
+    primary: green-palette.$palette,
+    secondary: blue-palette.$palette
+  )
+));

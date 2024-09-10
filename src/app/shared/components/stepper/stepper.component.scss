@@ -7,5 +7,7 @@
 .steps {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem;
 }
+
+@mixin get-theme($theme) {}

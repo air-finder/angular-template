@@ -13,9 +13,9 @@ import { TranslateModule } from '@ngx-translate/core';
     }
     <ng-content select="input,custom-select,textarea"></ng-content>
     @if(control?.invalid && control?.touched) {	
-      <div class="error-container">
+      <div class="form-field-error-container">
         @for(error of errors; track $index) {
-          <p class="error caption">{{ 'form-field.errors.' + error | translate }}</p>
+          <p class="form-field-error caption">{{ 'form-field.errors.' + error | translate }}</p>
         }
       </div>
     }

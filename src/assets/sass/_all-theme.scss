@@ -1,0 +1,20 @@
+@use '../../app/shared/components/stepper/stepper.theme' as stepper;
+@use '../../app/shared/components/form-field/form-field.theme' as form-field;
+@use '../../app/shared/components/toast/toast.theme' as toast;
+@use 'themes/components/input-theme' as input;
+
+@mixin all-components-theme($theme) {
+  @include project-theme($theme);
+  @include stepper.get-theme($theme);
+  @include form-field.get-theme($theme);
+  @include toast.get-theme($theme);
+  @include input.get-theme($theme);
+}
+
+@mixin project-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  * {
+    color: map-get($foreground, base);
+  }
+}

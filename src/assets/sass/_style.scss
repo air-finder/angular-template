@@ -1,5 +1,7 @@
-@use 'shadows';
-@use 'theme';
+@use './shadows';
+@use './typography';
+@use './all-theme';
+@use './themes/pre-built/green-blue' as main-theme;
 
 html,
 body {
@@ -7,6 +9,4 @@ body {
   margin: 0;
 }
 
-* {
-  color-scheme: dark;
-}
+@include all-theme.all-components-theme(main-theme.$theme);

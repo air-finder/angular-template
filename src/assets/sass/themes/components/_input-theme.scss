@@ -1,0 +1,43 @@
+@use '../../typography';
+
+@mixin get-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $error: map-get($theme, error);
+  input, textarea {
+    padding: 14px 16px;
+    border-radius: 6px;
+    height: 21px;
+    border: 1px solid map-get($background, hover);
+    background: map-get($background, base);
+    color: map-get($foreground, base);
+    @include typography.body_1;
+  
+    &::placeholder {
+      color: map-get($foreground, hint);
+    }
+  
+    &:focus {
+      border-color: map-get($background, active);
+      outline: none;
+    }
+  
+    &:disabled {
+      border-color: map-get($foreground, disabled);
+      background: map-get($background, disabled);
+      ::placeholder {
+        color: map-get($foreground, disabled);
+      }
+    }
+  
+    &.ng-touched {
+      &.ng-invalid {
+        border-color: map-get($error, default);
+        color: map-get($error, default);
+        &::placeholder {
+          color: map-get($error, lighter);
+        }
+      }
+    }
+  }
+}

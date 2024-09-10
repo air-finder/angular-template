@@ -1,52 +1,25 @@
+$line-width: 1.5rem;
+$line-height: 2px;
+
+@mixin base-line() {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  width: $line-width;
+  height: $line-height;
+}
+
 :host {
   &:not(.first-step) {
     .step-header:before {
-      content: '';
-      position: absolute;
-      top: 1rem;
-      left: -1rem;
-      width: 1rem;
-      height: 1px;
-      background-color: #f5f5f5;
+      @include base-line();
+      left: -$line-width;
     }
   }
   &:not(.last-step) {
     .step-header:after {
-      content: '';
-      position: absolute;
-      top: 1rem;
-      right: -1rem;
-      width: 1rem;
-      height: 1px;
-      background-color: #f5f5f5;
-    }
-  }
-  &.passed-step {
-    &:not(.first-step) {
-      .step-header:before {
-        height: 2px;
-        background-color: #00ffff;
-      }
-    }
-    &:not(.last-step) {
-      .step-header:after {
-        height: 2px;
-        background-color: #00ffff;
-      }
-    }
-  }
-  &.active {
-    .step-header {
-      .step-number {
-        background-color: #007bff;
-        color: white;
-      }
-    }
-    &:not(.first-step) {
-      .step-header:before {
-        height: 2px;
-        background-color: #00ffff;
-      }
+      @include base-line();
+      right: -$line-width;
     }
   }
 }
@@ -64,8 +37,6 @@
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background-color: #f5f5f5;
-    color: black;
   }
   .step-name {
     position: absolute;
@@ -78,4 +49,42 @@
   width: 0;
   height: 0;
   overflow: hidden;
+}
+
+@mixin get-theme($theme) {
+  $primary: map-get($theme, primary);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  .step-header:before, .step-header:after {
+    background-color: map-get($primary, lighter);
+  }
+  .step-header {
+    .step-number {
+      background-color: map-get($primary, lighter);
+      color: map-get($foreground, base);
+    }
+    .step-name {
+      color: map-get($foreground, base);
+    }
+  }
+  .passed-step {
+    .step-header {
+      .step-number {
+        background-color: map-get($primary, darker);
+      }
+      &:before, &:after {
+        background-color: map-get($primary, darker);
+      }
+    }
+  }
+  .active {
+    .step-header {
+      &:before {
+        background-color: map-get($primary, darker);
+      }
+      .step-number {
+        background-color: map-get($primary, darker);
+      }
+    }
+  }
 }

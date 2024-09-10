@@ -34,7 +34,12 @@
       "privacy": "Privacy policy",
       "agree-terms": "I agree to the terms and conditions",
       "agree-privacy": "I agree to the privacy policy",
-      "register-now": "Register now"
+      "register-now": "Register now",
+      "steps": {
+        "personal": "Personal",
+        "account": "Account",
+        "terms": "Terms"
+      }
     }
   },
   "form-field": {

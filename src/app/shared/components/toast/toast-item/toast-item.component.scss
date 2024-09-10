@@ -6,21 +6,6 @@
   width: 300px;
   display: flex;
   justify-content: space-between;
-  color: #fff;
-  &.toast {
-    &--success {
-      background-color: green;
-    }
-    &--danger {
-      background-color: red;
-    }
-    &--warn {
-      background-color: yellow;
-    }
-    &--info {
-      background-color: blue;
-    }
-  }
 
   .toast-message {
     font-size: 14px;
@@ -33,12 +18,36 @@
     font-weight: bold;
     font-size: 1.5rem;
     line-height: 1;
-    color: #fff;
     opacity: 0.8;
     transition: opacity 0.3s ease-in-out;
     margin-left: 5px;
     &:hover {
       opacity: 1;
+    }
+  }
+}
+
+@mixin get-theme($theme) {
+  $success: map-get($theme, success);
+  $danger: map-get($theme, error);
+  $warn: map-get($theme, warning);
+  $info: map-get($theme, info);
+  .toast {
+    &--success {
+      background-color: map-get($success, lighter);
+      color: map-get($success, darker);
+    }
+    &--danger {
+      background-color: map-get($danger, lighter);
+      color: map-get($danger, darker);
+    }
+    &--warn {
+      background-color: map-get($warn, lighter);
+      color: map-get($warn, darker);
+    }
+    &--info {
+      background-color: map-get($info, lighter);
+      color: map-get($info, darker);
     }
   }
 }

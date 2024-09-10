@@ -114,3 +114,40 @@
   line-height: 1.5;
   letter-spacing: 1px;
 }
+
+h1 { @include headline_1; }
+h2 { @include headline_2; }
+h3 { @include headline_3; }
+h4 { @include headline_4; }
+h5 { @include headline_5; }
+
+.subtitle-1 { @include subtitle_1; }
+.subtitle-2 { @include subtitle_2; }
+.subtitle-3 { @include subtitle_3; }
+
+.body-1 { @include body_1; }
+.body-2 { @include body_2; }
+.body-3 { @include body_3; }
+.bold-body-1 { @include bold_body_1; }
+.bold-body-2 { @include bold_body_2; }
+.bold-body-3 { @include bold_body_3; }
+
+.caption { @include caption; }
+.overline { @include overline; }
+.link { @include link; }
+
+p, span, div, li, td, label {
+  @include body_1;
+}
+
+a {
+  @include link;
+}
+
+th {
+  @include subtitle_1;
+}
+
+button {
+  @include button;
+}

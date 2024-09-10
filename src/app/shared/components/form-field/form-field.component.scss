@@ -9,13 +9,21 @@
   }
 }
 
-.error-container {
+.form-field-error-container {
   position: absolute;
   display: flex;
   flex-direction: column;
   bottom: 0;
-  color: red;
   p {
     margin: 0;
+  }
+}
+
+@mixin get-theme($theme) {
+  $error: map-get($theme, error);
+  .form-field-error-container {
+    p {
+      color: map-get($error, default);
+    }
   }
 }

@@ -6,7 +6,7 @@ import { SelectOptionComponent } from '../../shared/components/select/select-opt
 import { UserService } from '../../services/user.service';
 import { LoginRequest } from '../../services/models/user/login.request';
 import { AuthService } from '../../core/service/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { JsonPipe } from '@angular/common';
 
@@ -20,7 +20,7 @@ import { JsonPipe } from '@angular/common';
     SelectComponent,
     SelectOptionComponent,
     TranslateModule,
-    JsonPipe
+    RouterLink
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
