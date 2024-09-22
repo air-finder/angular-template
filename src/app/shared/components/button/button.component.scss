@@ -1,0 +1,17 @@
+@use './button-base';
+
+:host {
+  &.button{
+    outline: none;
+    border: none;
+    @include button-base.button-display;
+    >span {
+      @include button-base.typography;
+    }
+  }
+  
+  &.link {
+    outline: none;
+    border: none;
+  }
+}

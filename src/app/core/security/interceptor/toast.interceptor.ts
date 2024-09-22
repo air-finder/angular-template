@@ -12,7 +12,7 @@ export const toastInterceptor: HttpInterceptorFn = (req, next) => {
           toastService.danger('Unauthorized');
           break;
         default:
-          err.error.Errors.forEach((message: string) => toastService.danger(message));
+          if(err.error.Errors) err.error.Errors.forEach((message: string) => toastService.danger(message));
           break;
       }
     }}),

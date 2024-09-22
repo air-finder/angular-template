@@ -9,6 +9,9 @@ import { AuthService } from '../../core/service/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { JsonPipe } from '@angular/common';
+import { AnchorComponent, ButtonComponent } from '../../shared/components/button/button.component';
+import { IconButtonComponent } from '../../shared/components/button/icon-button.component';
+import { IconComponent } from '../../shared/components/icon/icon.component';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +22,10 @@ import { JsonPipe } from '@angular/common';
     FormFieldComponent,
     SelectComponent,
     SelectOptionComponent,
+    AnchorComponent,
+    ButtonComponent,
+    IconButtonComponent,
+    IconComponent,
     TranslateModule,
     RouterLink
   ],

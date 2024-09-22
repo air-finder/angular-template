@@ -5,7 +5,10 @@
     "ng": "ng",
     "start": "ng serve --o",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "build-stg": "ng build --configuration stage",
+    "build-dev": "ng build --configuration development",
+    "build-local": "ng build --configuration local",
+    "watch": "ng build --watch --configuration local",
     "test": "ng test",
     "serve:ssr:angular-template": "node dist/angular-template/server/server.mjs"
   },

@@ -9,11 +9,11 @@
     <label for="password">{{ 'pages.login.password' | translate }}</label>
     <input custom type="password" id="password" formControlName="password" [placeholder]="'pages.login.password' | translate">
   </form-field>
-  <a [routerLink]="['', 'forgot-password']" routerLinkActive="router-link-active" >{{ 'pages.login.forgot-password' | translate }}</a>
-  <button type="submit" [disabled]="form.invalid">{{ 'pages.login.enter' | translate }}</button>
+  <a [routerLink]="['', 'forgot-password']" routerLinkActive="router-link-active" custom-link>{{ 'pages.login.forgot-password' | translate }}</a>
+  <button custom-button type="submit" [disabled]="form.invalid" theme="primary">{{ 'pages.login.enter' | translate }}</button>
 </form>
 
 <p class="register-message">
-  <a [routerLink]="['', 'register']" routerLinkActive="router-link-active" >{{'pages.login.register' | translate}}</a>
+  <a [routerLink]="['', 'register']" routerLinkActive="router-link-active" custom-link>{{'pages.login.register' | translate}}</a>
   <span class="register-message-question">{{'pages.login.not-registered-yet' | translate}}</span>
 </p>

@@ -5,13 +5,14 @@ import { UpdatePasswordRequest } from './models/user/update-password.request';
 import { ForgotPasswordRequest } from './models/user/forgot-password.request';
 import { ForgotPasswordCodeRequest } from './models/user/forgot-password-code.request';
 import { ForgotPasswordUpdateRequest } from './models/user/forgot-password-update.request';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService extends BaseService {
   constructor() {
-    super("http://localhost:5000", "user");
+    super(environment.authUrl, "user");
   }
 
   async login(request: LoginRequest) {

@@ -1,0 +1,46 @@
+@mixin get-theme($theme) {
+  $primary: map-get($theme, primary);
+  $secondary: map-get($theme, secondary);
+  $success: map-get($theme, success);
+  $error: map-get($theme, error);
+  $info: map-get($theme, info);
+  $warn: map-get($theme, warning);
+  .button {
+    &--primary {
+      background-color: map-get($primary, lighter);
+      .button-span {
+        color: map-get($primary, darker);
+      }
+    }
+    &--secondary {
+      background-color: map-get($secondary, lighter);
+      .button-span {
+        color: map-get($secondary, darker);
+      }
+    }
+    &--success {
+      background-color: map-get($success, lighter);
+      .button-span {
+        color: map-get($success, darker);
+      }
+    }
+    &--danger {
+      background-color: map-get($error, lighter);
+      .button-span {
+        color: map-get($error, darker);
+      }
+    }
+    &--info {
+      background-color: map-get($info, lighter);
+      .button-span {
+        color: map-get($info, darker);
+      }
+    }
+    &--warning {
+      background-color: map-get($warn, lighter);
+      .button-span {
+        color: map-get($warn, darker);
+      }
+    }
+  }
+}
