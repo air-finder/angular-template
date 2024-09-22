@@ -10,7 +10,7 @@ const HOST_SELECTOR_CLASS: {attribute: string; classes: string[]}[] = [
 
 @Directive()
 export class ButtonBase implements AfterViewInit {
-  theme = input<Theme>();
+  theme = input<Theme>('primary');
   disabled = input(false, {transform: booleanAttribute});
 
   constructor(

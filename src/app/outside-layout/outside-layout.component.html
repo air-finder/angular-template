@@ -1,3 +1,9 @@
 <div class="content">
+  <a icon-button
+    class="back-button"
+    [routerLink]="['', 'login']"
+    routerLinkActive="button-hidden">
+    <svg custom-icon icon="arrowLeft"></svg>
+  </a>
   <router-outlet></router-outlet>
 </div>

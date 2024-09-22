@@ -6,6 +6,7 @@
   width: 100vw;
   background: linear-gradient(black, green 100vw);
 }
+
 .content {
   border-radius: 2rem;
   width: 450px;
@@ -16,4 +17,13 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  &.button-hidden {
+    display: none;
+  }
 }

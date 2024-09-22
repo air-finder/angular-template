@@ -10,6 +10,7 @@ import { SelectOptionComponent } from '../../shared/components/select/select-opt
 import { Gender } from '../../services/enums/gender';
 import { PeopleService } from '../../services/people.service';
 import { Router } from '@angular/router';
+import { ButtonComponent } from '../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-register',
@@ -21,6 +22,7 @@ import { Router } from '@angular/router';
     FormFieldComponent,
     SelectComponent,
     SelectOptionComponent,
+    ButtonComponent,
     TranslateModule
   ],
   templateUrl: './register.component.html',

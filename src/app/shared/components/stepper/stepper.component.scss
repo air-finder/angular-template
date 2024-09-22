@@ -10,4 +10,10 @@
   gap: 3rem;
 }
 
+.actions {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+
 @mixin get-theme($theme) {}

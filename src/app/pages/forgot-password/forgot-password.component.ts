@@ -7,6 +7,7 @@ import { StepComponent } from '../../shared/components/stepper/step/step.compone
 import { UserService } from '../../services/user.service';
 import { ForgotPasswordForm } from './forgot-password.form';
 import { Router } from '@angular/router';
+import { ButtonComponent } from '../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-forgot-password',
@@ -16,7 +17,8 @@ import { Router } from '@angular/router';
     TranslateModule,
     FormFieldComponent,
     StepperComponent,
-    StepComponent
+    StepComponent,
+    ButtonComponent
   ],
   templateUrl: './forgot-password.component.html',
   styleUrl: './forgot-password.component.scss'

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, computed, contentChildren, effect, ElementRef, Renderer2, signal, ViewChild, viewChild } from '@angular/core';
+import { Component, computed, contentChildren, ElementRef, signal, viewChild } from '@angular/core';
 import { StepComponent } from './step/step.component';
 import { TranslateModule } from '@ngx-translate/core';
 
