@@ -2,14 +2,19 @@ import { booleanAttribute, Component, computed, contentChildren, effect, Element
 import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
 import { SelectRef } from './models/select-ref';
 import { SelectOptionComponent } from './select-option/select-option.component';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
   selector: 'custom-select',
   standalone: true,
-  imports: [FormsModule],
+  imports: [
+    FormsModule,
+    IconComponent
+  ],
   template: `
     <input #input type="text" [ngModel]="display()" (focus)="openned.set(true)" (focusout)="onTouched && onTouched()" readonly
       [disabled]="isDisabled()" [placeholder]="placeholder()"/>
+    <icon custom-icon [icon]="selectIcon()" class="select-icon"></icon>
     @if(!isDisabled() && openned()) {
       <div #dropdown class="select-dropdown md-shadow">
         <ng-content select="select-option"></ng-content>
@@ -25,6 +30,7 @@ export class SelectComponent<T> implements ControlValueAccessor {
   options = contentChildren(SelectOptionComponent<T>);
   dropdown = viewChild<ElementRef<any>>('dropdown');
   input = viewChild<ElementRef<any>>('input');
+  arrow = viewChild(IconComponent);
   private valueRef = computed<SelectRef<T>[]>(() => this.options().map(x => ({ value: x.value(), display: x.display(), selected: x.selected() })));
   protected value = computed<T[]>(() => this.valueRef().filter(v => v.selected).map(x => x.value));
   protected display = computed<string>(() => this.valueRef().filter(v => v.selected).map(x => x.display).join(', '));
@@ -34,6 +40,7 @@ export class SelectComponent<T> implements ControlValueAccessor {
   protected onChange? = (value?: T | T[]) => {};
   protected isDisabled = signal(false);
   protected openned = signal(false);
+  protected selectIcon = computed(() => this.openned() ? 'arrow-up' : 'arrow-down');
 
   constructor() {
     if (this.ngControl) this.ngControl.valueAccessor = this;
@@ -68,6 +75,10 @@ export class SelectComponent<T> implements ControlValueAccessor {
   @HostListener('document:click', ['$event.target'])
   protected handleClick(target: MouseEvent) {
     if(this.input()?.nativeElement.contains(target)) return;
+    if(this.arrow()?.img()?.nativeElement.contains(target)) {
+      this.openned.update(x => !x);
+      return;
+    }
     if(this.openned() && !this.dropdown()?.nativeElement.contains(target)) this.closeDropdown();
   }
 }

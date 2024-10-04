@@ -4,15 +4,13 @@
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(black, green 100vw);
 }
 
 .content {
   border-radius: 2rem;
-  width: 450px;
-  height: 650px;
-  background: gray;
-  padding: 1rem 3rem;
+  width: 250px;
+  min-height: 400px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

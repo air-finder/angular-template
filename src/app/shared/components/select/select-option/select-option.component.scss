@@ -3,7 +3,14 @@
   display: block;
   padding: .5rem;
   cursor: pointer;
-  &:hover {
-    background: #f5f5f520;
+}
+
+@mixin get-theme($theme) {
+  $background: map-get($theme, background);
+  .select-option {
+    background: transparent;
+    &:hover {
+      background: map-get($background, hover);
+    }
   }
 }

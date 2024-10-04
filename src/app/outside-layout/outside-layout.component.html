@@ -1,9 +1,10 @@
-<div class="content">
-  <a icon-button
-    class="back-button"
-    [routerLink]="['', 'login']"
-    routerLinkActive="button-hidden">
-    <svg custom-icon icon="arrowLeft"></svg>
-  </a>
+<div class="content sm-shadow">
+  @if(showButton()) {
+    <a icon-button
+      class="back-button"
+      [routerLink]="['', 'login']">
+      <icon custom-icon icon="arrow-left"></icon>
+    </a>
+  }
   <router-outlet></router-outlet>
 </div>

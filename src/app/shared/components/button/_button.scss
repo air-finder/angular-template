@@ -7,39 +7,39 @@
   $warn: map-get($theme, warning);
   .button {
     &--primary {
-      background-color: map-get($primary, lighter);
+      background-color: map-get($primary, darker);
       .button-span {
-        color: map-get($primary, darker);
+        color: map-get($primary, text);
       }
     }
     &--secondary {
-      background-color: map-get($secondary, lighter);
+      background-color: map-get($secondary, darker);
       .button-span {
-        color: map-get($secondary, darker);
+        color: map-get($secondary, text);
       }
     }
     &--success {
-      background-color: map-get($success, lighter);
+      background-color: map-get($success, darker);
       .button-span {
-        color: map-get($success, darker);
+        color: map-get($success, text);
       }
     }
     &--danger {
-      background-color: map-get($error, lighter);
+      background-color: map-get($error, darker);
       .button-span {
-        color: map-get($error, darker);
+        color: map-get($error, text);
       }
     }
     &--info {
-      background-color: map-get($info, lighter);
+      background-color: map-get($info, darker);
       .button-span {
-        color: map-get($info, darker);
+        color: map-get($info, text);
       }
     }
     &--warning {
-      background-color: map-get($warn, lighter);
+      background-color: map-get($warn, default);
       .button-span {
-        color: map-get($warn, darker);
+        color: map-get($warn, text);
       }
     }
   }

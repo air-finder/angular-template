@@ -13,7 +13,7 @@ import { ToastService } from '../service/toast.service';
   `,
   styleUrl: './toast-item.component.scss',
   host: {
-    class: 'toast',
+    class: 'toast md-shadow',
     '[class.toast--success]': 'toast().toastType === toastType.SUCCESS',
     '[class.toast--warn]': 'toast().toastType === toastType.WARNING',
     '[class.toast--info]': 'toast().toastType === toastType.INFO',

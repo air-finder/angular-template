@@ -1,14 +1,16 @@
 <h1>{{ 'pages.login.title' | translate }}</h1>
 
 <form [formGroup]="form" (submit)="test()">
-  <form-field controlName="login">
-    <label for="login">{{ 'pages.login.login' | translate }}</label>
-    <input type="text" id="login" formControlName="login" [placeholder]="'pages.login.login' | translate">
-  </form-field>
-  <form-field controlName="password">
-    <label for="password">{{ 'pages.login.password' | translate }}</label>
-    <input custom type="password" id="password" formControlName="password" [placeholder]="'pages.login.password' | translate">
-  </form-field>
+  <div>
+    <form-field controlName="login">
+      <label for="login">{{ 'pages.login.login' | translate }}</label>
+      <input type="text" id="login" formControlName="login" [placeholder]="'pages.login.login' | translate">
+    </form-field>
+    <form-field controlName="password">
+      <label for="password">{{ 'pages.login.password' | translate }}</label>
+      <input custom type="password" id="password" formControlName="password" [placeholder]="'pages.login.password' | translate">
+    </form-field>
+  </div>
   <a [routerLink]="['', 'forgot-password']" routerLinkActive="router-link-active" custom-link>{{ 'pages.login.forgot-password' | translate }}</a>
   <button custom-button type="submit" [disabled]="form.invalid" theme="primary">{{ 'pages.login.enter' | translate }}</button>
 </form>

@@ -11,7 +11,10 @@ import { ToastService } from '../shared/components/toast/service/toast.service';
     BreadcrumbComponent
   ],
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss'
+  styleUrl: './layout.component.scss',
+  host: {
+    class: 'main-layout'
+  }
 })
 export class LayoutComponent {
   title = signal<string>('title');

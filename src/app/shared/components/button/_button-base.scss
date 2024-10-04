@@ -25,13 +25,7 @@
   padding: .25rem 1rem;
   border-radius: .25rem;
   text-decoration: none;
-}
-
-@mixin typography {
-  font-size: .75rem;
-  line-height: 1.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
+  height: 2.2rem;
 }
 
 @mixin icon-size {

@@ -14,16 +14,12 @@
   display: flex;
   flex-direction: column;
   bottom: 0;
-  p {
-    margin: 0;
-  }
+  p { margin: 0; }
 }
 
 @mixin get-theme($theme) {
   $error: map-get($theme, error);
   .form-field-error-container {
-    p {
-      color: map-get($error, default);
-    }
+    p { color: map-get($error, default); }
   }
 }

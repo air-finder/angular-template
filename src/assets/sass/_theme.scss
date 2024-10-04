@@ -3,12 +3,12 @@
 @use 'palettes/orange' as orange-colors;
 @use 'palettes/red' as red-colors;
 
-@function define-palette($palette, $default: 50, $lighter: 30, $darker: 70, $text: $default) {
+@function define-palette($palette, $default: 50, $lighter: 30, $darker: 70, $text: white) {
   @return (
     default: map-get($palette, $default),
     lighter: map-get($palette, $lighter),
     darker: map-get($palette, $darker),
-    text: map-get($palette, $text)
+    text: $text
   );
 }
 
@@ -35,14 +35,15 @@
   @return (
     base: white,
     hint: rgba(white, 0.38),
-    disabled: rgba(white, 0.38)
+    disabled: rgba(white, 0.38),
+    text: white
   );
 }
 @function define-light-foreground() {
   @return (
     base: rgba(black, 0.87),
-    hint: rgba(white, 0.5),
-    disabled: rgba(white, 0.5),
+    hint: rgba(black, 0.5),
+    disabled: rgba(black, 0.5),
     text: rgba(black, 0.87)
   );
 }
@@ -66,6 +67,7 @@
 @function define-dark-theme($theme) {
   @if map-get($theme, palettes) {
     $palettes: map-get($theme, palettes);
+    $text: white;
     @return (
       primary: define-palette(map-get($palettes, primary)),
       secondary: define-palette(map-get($palettes, secondary)),

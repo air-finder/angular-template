@@ -1,24 +1,14 @@
-import { Component, computed, input, NO_ERRORS_SCHEMA } from '@angular/core';
-import { Icons } from '../../../../assets/svg/icons';
-
+import { Component, computed, ElementRef, input, NO_ERRORS_SCHEMA, viewChild } from '@angular/core';
 @Component({
-  selector: 'svg[custom-icon]',
+  selector: 'icon[custom-icon]',
   standalone: true,
   imports: [],
   template: `
-    <path [attr.d]="path()"></path>
+    <img #imageIcon src="assets/svg/{{this.icon()}}.svg"/>
   `,
-  styleUrl: './icon.component.scss',
-  host: {
-    "width": "24",
-    "height": "24",
-    "viewBox": "0 0 24 24",
-    "[attr.fill]": "color()"
-  },
-  schemas: [NO_ERRORS_SCHEMA]
+  styleUrl: './icon.component.scss'
 })
 export class IconComponent {
   icon = input.required<string>();
-  color = input<string>('#666666');
-  path = computed(() => Icons.getIcon(this.icon()));
+  img = viewChild<ElementRef<any>>('imageIcon');
 }

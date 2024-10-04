@@ -7,6 +7,9 @@ import { SelectComponent } from '../select.component';
   imports: [],
   template: `{{ display() }}`,
   styleUrl: './select-option.component.scss',
+  host: {
+    class: 'select-option',
+  }
 })
 export class SelectOptionComponent<T> {
   value = model.required<T>();

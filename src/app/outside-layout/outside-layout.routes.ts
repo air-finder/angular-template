@@ -10,11 +10,13 @@ export const routes: Routes = [
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    data: { goBack: true }
   },
   { 
     path: 'forgot-password',
-    component: ForgotPasswordComponent
+    component: ForgotPasswordComponent,
+    data: { goBack: true }
   },
   { path: '**', redirectTo: 'login' }
 ];

@@ -3,5 +3,11 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: #444343;
+}
+
+@mixin get-theme($theme) {
+  $background: map-get($theme, background);
+  .main-layout {
+    background-color: map-get($background, base);
+  }
 }

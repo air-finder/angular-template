@@ -9,4 +9,14 @@ body {
   margin: 0;
 }
 
-@include all-theme.all-components-theme(main-theme.$theme);
+input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s,
+    color 5000s ease-in-out 0s;
+}
+
+.light-theme {
+  @include all-theme.all-components-theme(main-theme.$light-theme);
+}
+.dark-theme {
+  @include all-theme.all-components-theme(main-theme.$dark-theme);
+}

@@ -12,7 +12,8 @@ import {LayoutAsideItem} from "./models/layout-aside-item";
   templateUrl: './layout-aside.component.html',
   styleUrl: './layout-aside.component.scss',
   host: {
-    '[class.open]': 'openAside()'
+    '[class.open]': 'openAside()',
+    class: 'main-layout-aside'
   }
 })
 export class LayoutAsideComponent {

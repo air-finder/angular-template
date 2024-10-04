@@ -113,6 +113,8 @@
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 h1 { @include headline_1; }
@@ -148,6 +150,6 @@ th {
   @include subtitle_1;
 }
 
-button {
+button, button > span {
   @include button;
 }
