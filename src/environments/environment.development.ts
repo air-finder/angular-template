@@ -1,5 +1,6 @@
 export const environment = {
   production: false,
-  authUrl: 'http://152.250.220.77:50001',
-  mailUrl: 'http://152.250.220.77:50002',
+  authUrl: 'https://dev.auth-api.bvsilva.com',
+  mailUrl: 'https://dev.mail-api.bvsilva.com',
+  paymentsUrl: 'https://dev.payments-api.bvsilva.com',
 }
