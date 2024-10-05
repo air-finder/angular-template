@@ -6,6 +6,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 RUN $BUILD_COMMAND
+RUN ls -R /app/dist
 
 FROM nginx:latest
 RUN rm -rf /usr/share/nginx/html/*
