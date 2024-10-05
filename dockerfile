@@ -1,9 +1,11 @@
+ARG BUILD_COMMAND=npm run build
+
 FROM node:18 as build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build
+RUN $BUILD_COMMAND
 
 FROM nginx:latest
 RUN rm -rf /usr/share/nginx/html/*
