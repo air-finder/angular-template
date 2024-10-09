@@ -2,7 +2,7 @@
   display: flex;
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: -webkit-fill-available;
 }
 
 @mixin get-theme($theme) {
