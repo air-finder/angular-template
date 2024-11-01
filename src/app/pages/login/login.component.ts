@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormFieldComponent } from "../../shared/components/form-field/form-field.component";
 import { SelectComponent } from '../../shared/components/select/select.component';
@@ -33,9 +33,10 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
 })
 export class LoginComponent {
   form = new FormGroup({
-    login: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
+    login: new FormControl<string>('', Validators.required),
+    password: new FormControl<string>('', Validators.required)
   })
+  loading = signal(false);
 
   constructor(
     private userService: UserService,
@@ -44,9 +45,11 @@ export class LoginComponent {
   ) {}
 
   test() {
+    this.loading.set(true);
     this.userService
       .login(this.form.value as LoginRequest)
       .then(r => this.authService.login(r.result))
-      .then(() => this._router.navigate(['']));
+      .then(() => this._router.navigate(['']))
+      .finally(() => this.loading.set(false));
   }
 }

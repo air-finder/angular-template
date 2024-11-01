@@ -48,7 +48,19 @@ export class ForgotPasswordComponent {
         await this.changePassword();
         break;
     }
-    this.loading.set(false);
+  }
+
+  
+  checkStep() {
+    switch(this.stepper()?.currentIndex()) {
+      case 0:
+        return this.form.firstStep.invalid;
+      case 1:
+        return this.form.secondStep.invalid;
+      case 2:
+        return this.form.thirdStep.invalid;
+    }
+    return true;
   }
 
   async sendCode() {
@@ -56,7 +68,8 @@ export class ForgotPasswordComponent {
     return await this.userService
       .forgotPassword(this.form.getFirstStepRequest())
       .then(r => { if(r?.success) this.stepper()!.next() })
-      .catch(() => this.form.firstStep.reset());;
+      .catch(() => this.form.firstStep.reset())
+      .finally(() => this.loading.set(false));
   }
 
   async verifyCode() {
@@ -64,7 +77,8 @@ export class ForgotPasswordComponent {
     return await this.userService
       .forgotPasswordCode(this.form.getSecondStepRequest())
       .then(r => {if(r?.success) this.stepper()!.next()})
-      .catch(() => this.form.secondStep.reset());
+      .catch(() => this.form.secondStep.reset())
+      .finally(() => this.loading.set(false));
   }
 
   async changePassword() {
@@ -72,6 +86,7 @@ export class ForgotPasswordComponent {
     return await this.userService
       .forgotPasswordUpdate(this.form.getThirdStepRequest())
       .then(() => this._router.navigate(['/login']))
-      .catch(() => this.form.thirdStep.reset());
+      .catch(() => this.form.thirdStep.reset())
+      .finally(() => this.loading.set(false));
   }
 }

@@ -5,6 +5,8 @@
   $error: map-get($theme, error);
   $info: map-get($theme, info);
   $warn: map-get($theme, warning);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
   .button {
     &--primary {
       background-color: map-get($primary, darker);
@@ -40,6 +42,12 @@
       background-color: map-get($warn, default);
       .button-span {
         color: map-get($warn, text);
+      }
+    }
+    &.disabled {
+      background-color: map-get($background, disabled);
+      .button-span {
+        color: map-get($foreground, disabled);
       }
     }
   }

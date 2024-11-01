@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, ElementRef, NgZone, OnDestroy, OnInit, booleanAttribute, input } from "@angular/core";
+import { AfterViewInit, Directive, ElementRef, NgZone, OnDestroy, OnInit, booleanAttribute, effect, input } from "@angular/core";
 
 type Theme = 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info'
 
@@ -16,7 +16,13 @@ export class ButtonBase implements AfterViewInit {
   constructor(
     public _elementRef: ElementRef,
     public _ngZone: NgZone
-  ) { }
+  ) {
+    effect(() => {
+      const element = this._elementRef.nativeElement;
+      if(this.disabled()) element.classList.add('disabled');
+      else element.classList.remove('disabled');
+    })
+  }
 
   ngAfterViewInit(): void {
     const element = this._elementRef.nativeElement;

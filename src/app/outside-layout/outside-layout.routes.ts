@@ -6,15 +6,18 @@ import { ForgotPasswordComponent } from "../pages/forgot-password/forgot-passwor
 export const routes: Routes = [
   {
     path: 'login',
+    title: 'Login',
     component: LoginComponent
   },
   {
     path: 'register',
+    title: 'Register',
     component: RegisterComponent,
     data: { goBack: true }
   },
   { 
     path: 'forgot-password',
+    title: 'Forgot password',
     component: ForgotPasswordComponent,
     data: { goBack: true }
   },
